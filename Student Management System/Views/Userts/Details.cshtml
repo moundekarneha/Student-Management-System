@@ -1,0 +1,50 @@
+﻿@model Student_Management_System.Models.Usert
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="background-color: aliceblue; position: center; color: brown">Details</h2>
+
+<div>
+    <h4 style="background-color: aliceblue; position: center; color: brown">User</h4>
+    <hr />
+    <dl class="dl-horizontal" style="background-color: aliceblue; position: center; color: brown">
+        <dt>
+            @Html.DisplayNameFor(model => model.fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pass)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { style = "background-color:aliceblue; position:center;color:green" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

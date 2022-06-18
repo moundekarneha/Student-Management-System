@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Student_Management_System.Models.Usert>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="background-color:aliceblue; position:center;color:brown;padding-left:400px">User Details</h2>
+
+<p style="background-color:aliceblue; position:center;color:brown;padding-left:400px">
+    @Html.ActionLink("Create New", "Create", new { @style = "background - color:antiquewhite;padding-left:450px; color: green" })
+</p>
+<table class="table" style="background-color:aliceblue; position:center;color:crimson;padding-left:400px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uname)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.pass)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uname)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.pass)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }, new { @style = "color: green" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @style = "color: green" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @style = "color: green" })
+        </td>
+    </tr>
+}
+
+</table>

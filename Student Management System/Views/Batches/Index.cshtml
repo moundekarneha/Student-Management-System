@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Student_Management_System.Models.Batch>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="background-color:aliceblue; position:center;color:brown;padding-left:400px">Batch Details</h2>
+
+<p style="background-color:antiquewhite; position:center">
+    @Html.ActionLink("Create New", "Create", new { @style = "background - color:antiquewhite;padding-left:450px; color: green" })
+</p>
+<table class="table" style="background-color:aliceblue; position:center;color:crimson;padding-left:400px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.batch1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yr)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.batch1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yr)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }, new { @style = "color: green" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }, new { @style = "color: green" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @style = "color: green" })
+        </td>
+    </tr>
+}
+
+</table>

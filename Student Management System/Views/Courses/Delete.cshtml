@@ -1,0 +1,40 @@
+﻿@model Student_Management_System.Models.Course
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="background-color:aliceblue; position:center;color:brown">Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4 style="background-color:aliceblue; position:center;color:brown">Course</h4>
+    <hr />
+    <dl class="dl-horizontal" style="background-color:aliceblue; position:center;color:brown">
+        <dt>
+            @Html.DisplayNameFor(model => model.course1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="background-color:aliceblue; position:center;color:brown">
+            <input type="submit" value="Delete" class="btn btn-default" style="background-color:aliceblue; position:center;color:black"/> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
